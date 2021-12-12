@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+#box{
+height:500px;
+width:500px;
+border:5px solid;
+border-radius:50%;
+position:relative;
+top:100px;
+background:black;
+box-shadow:0 0 9px 5px red;
+}
+#cercle{
+height:25px;
+width:25px;
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
+background:white;
+top:-10px;
+opacity:1;
+box-shadow:0 0 9px 5px red;
+border-radius:50%;
+}
+#second{
+height:250px;
+width:1px;
+position:absolute;
+top:-250px;
+transform:rotate(0deg);
+transform-origin:bottom;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
+background:white;
+box-shadow:0 0 5px 2px orange;
+border-radius:30%;
+animation:cour 60s linear infinite;
+}
+
+#hours{
+height:80px;
+width:10px;
+position:absolute;
+top:-80px;
+transform:rotate(00deg);
+transform-origin:bottom;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
+background:white;
+box-shadow:0 0 5px 2px red;
+border-radius:50%;
+}
+#munite{
+height:150px;
+width:5px;
+position:absolute;
+top:-150px;
+transform:rotate(0deg);
+transform-origin:bottom;
+left:0;
+right:0;
+bottom:0;
+margin:auto;
+background:white;
+box-shadow:0 0 5px 2px orange;
+border-radius:30%;
+opacity:1;
+}
+p{
+color:white;
+font-size:20px;
+}
+#n1{
+position:relative;
+left:120px;
+top:-35px;
+}
+#n2{
+position:relative;
+left:200px;
+top:8px;
+}
+#n3{
+position:relative;
+left:230px;
+top:75px;
+}
+#n4{
+position:relative;
+left:200px;
+top:147px;
+}
+#n5{
+position:relative;
+left:118px;
+top:180px;
+color:blue;
+}
+#n6{
+position:relative;
+left:0px;
+top:160px;
+}
+#n7{
+position:relative;
+left:-117px;
+top:87px;
+}
+#n8{
+position:relative;
+left:-200px;
+top:-45px;
+}
+#n10{
+position:relative;
+left:-200px;
+top:-370px;
+color:blue;
+}
+#n11{
+position:relative;
+left:-120px;
+top:-510px;
+}
+#n9{
+position:relative;
+left:-230px;
+top:-195px;
+}
+#n12{
+position:relative;
+left:0px;
+top:-15px;
+}
+</style>
+</head>
+<body>
+<center>
+<div>
+<div id="box">
+<p id="n12">12</p>
+<p id="n1">1</p>
+<p id="n2">2</p>
+<p id="n3">3</p>
+<p id="n4">4</p>
+<p id="n5">5</p>
+<p id="n6">6</p>
+<p id="n7">7</p>
+<p id="n8">8</p>
+<p id="n9">9</p>
+<p id="n10">10</p>
+<p id="n11">11</p>
+<div id="hours"></div>
+<div id="munite"></div>
+<div id="second"></div>
+<div id="cercle"></div>
+</div>
+</div>
+</center>
+<script type="text/javascript">
+function clock(){
+var check=new Date();
+var H=(check.getHours() + check.getMinutes() / 60) / 12 * 360;
+var M=check.getMinutes() / 60 * 360;
+var S=(check.getSeconds() + check.getMilliseconds()/1000) / 60 * 360;
+second.style.transform="rotate("+S+"deg)";
+munite.style.transform="rotate("+M+"deg)";
+hours.style.transform="rotate("+H+"deg)";
+}
+setInterval("clock()");
+</script>
+</body>
+</html>
